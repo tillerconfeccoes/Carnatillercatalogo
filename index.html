@@ -9,9 +9,14 @@
   <meta property="og:title" content="CarnaTiller 2027 | Abadás Personalizados Direto da Fábrica">
   <meta property="og:description" content="+180 modelos · Arte Grátis · Mínimo 10 peças · 1 ano de garantia na estampa. Simule seu orçamento agora!">
     <meta property="og:type" content="website">
-  <meta property="og:image" content="imagens/og-carnatiller-2027.jpg">
+  <meta property="og:url" content="https://tillerconfeccoes.github.io/Carnatillercatalogo/">
+  <meta property="og:image" content="https://tillerconfeccoes.github.io/Carnatillercatalogo/imagens/og-carnatiller-2027.jpg">
+  <meta property="og:image:secure_url" content="https://tillerconfeccoes.github.io/Carnatillercatalogo/imagens/og-carnatiller-2027.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="imagens/og-carnatiller-2027.jpg">
+  <meta name="twitter:image" content="https://tillerconfeccoes.github.io/Carnatillercatalogo/imagens/og-carnatiller-2027.jpg">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <!-- Meta Pixel Code (CarnaTiller 2027 — Otimização por Conversão: Lead) -->
   <script>
@@ -1418,6 +1423,124 @@
     .modal-actions { display: flex; gap: 8px; }
     .modal-actions .btn { min-height: 38px; padding: 8px 14px; font-size: 12px; }
 
+
+    /* Opção de envio com miniatura + botões Grupo / WhatsApp Pessoal */
+    .thumb-toggle-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #f5fff2;
+      border: 1.5px solid rgba(57, 255, 20, 0.55);
+      border-radius: 14px;
+      padding: 10px 12px;
+      margin-top: 12px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .thumb-toggle-box input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--ink);
+      flex-shrink: 0;
+    }
+    .thumb-toggle-preview {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      background: #fff;
+      flex-shrink: 0;
+    }
+    .thumb-toggle-text strong { display: block; font-size: 12px; font-weight: 900; color: var(--ink); }
+    .thumb-toggle-text small { display: block; font-size: 10.5px; color: #34522f; line-height: 1.35; margin-top: 1px; }
+
+    .share-split-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    @media (min-width: 500px) {
+      .share-split-row { grid-template-columns: 1fr 1fr; }
+    }
+    .share-split-row .btn { min-height: 44px; font-size: 12.5px; padding: 10px 14px; }
+
+    /* Mini Modal de Compartilhamento (Desktop / WhatsApp Pessoal & Grupo com Miniatura) */
+    .share-modal-body {
+      padding: 18px;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .share-preview-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #222228;
+      border: 1px solid #34343e;
+      border-radius: 16px;
+      padding: 10px 12px;
+    }
+    .share-preview-card img {
+      width: 68px;
+      height: 86px;
+      border-radius: 10px;
+      object-fit: cover;
+      background: #111;
+      flex-shrink: 0;
+    }
+    .share-preview-card strong { display: block; font-size: 14px; }
+    .share-preview-card small { display: block; font-size: 11.5px; color: #c7cad3; margin-top: 3px; line-height: 1.4; }
+    .share-field-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--green);
+      margin-bottom: 5px;
+    }
+    .share-dark-input {
+      width: 100%;
+      border: 1.5px solid #3c3c47;
+      border-radius: 12px;
+      background: #111115;
+      color: #ffffff;
+      padding: 10px 13px;
+      font-size: 13px;
+      font-weight: 600;
+      outline: none;
+    }
+    .share-dark-input:focus { border-color: var(--green); }
+    .share-msg-preview {
+      width: 100%;
+      min-height: 92px;
+      resize: vertical;
+      border: 1px solid #32323c;
+      border-radius: 12px;
+      background: #121216;
+      color: #e4e6ec;
+      padding: 10px 12px;
+      font-size: 12px;
+      line-height: 1.45;
+      outline: none;
+    }
+    .share-modal-hint {
+      font-size: 11px;
+      color: var(--mustard);
+      line-height: 1.45;
+      margin: 0;
+    }
+    .share-modal-btns {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    @media (min-width: 440px) {
+      .share-modal-btns.two { grid-template-columns: 1fr 1fr; }
+    }
+
     .toast {
       position: fixed;
       left: 50%;
@@ -1688,7 +1811,8 @@
           </div>
           <div class="selected-bar-actions">
             <a class="btn green" href="#orcamento">Simular este modelo ↓</a>
-            <button type="button" class="btn outline" id="shareGroupBtn">Mandar no grupo da turma ↗</button>
+            <button type="button" class="btn outline" id="shareGroupBtn">Enviar no grupo (c/ foto) ↗</button>
+            <button type="button" class="btn outline" id="sharePersonalModelBtn">WhatsApp pessoal (c/ foto) ↗</button>
           </div>
         </div>
       </div>
@@ -1896,9 +2020,22 @@
             <span>4x ou 5x no valor total no fechamento</span>
           </div>
 
+          <!-- Opção de enviar a miniatura da imagem junto da mensagem -->
+          <label class="thumb-toggle-box" for="includeThumbCheck">
+            <input type="checkbox" id="includeThumbCheck" checked>
+            <img id="thumbTogglePreview" class="thumb-toggle-preview" src="" alt="Miniatura do modelo">
+            <span class="thumb-toggle-text">
+              <strong>Enviar miniatura da imagem junto da mensagem</strong>
+              <small>Anexa a foto do modelo (no celular) ou envia com link de miniatura + foto copiada p/ colar no WhatsApp.</small>
+            </span>
+          </label>
+
           <div class="quote-actions">
             <button class="btn green" id="requestQuote" type="button">GARANTIR ORÇAMENTO + ARTE GRÁTIS NO WHATSAPP →</button>
-            <button class="btn outline" id="shareQuoteGroup" type="button">Enviar esta simulação no grupo da turma ↗</button>
+            <div class="share-split-row">
+              <button class="btn outline" id="shareQuoteGroup" type="button">👥 Enviar no grupo (c/ foto)</button>
+              <button class="btn outline" id="shareQuotePersonal" type="button">📱 WhatsApp pessoal (c/ foto)</button>
+            </div>
           </div>
           <p class="quote-note">Estimativa prévia conforme configuração escolhida. Sem compromisso: valores finais, arte grátis e prazo são confirmados no WhatsApp (84) 2133-8804.</p>
         </div>
@@ -2042,8 +2179,52 @@
           <span id="modalCategory">Ondas & Neon</span>
         </div>
         <div class="modal-actions">
-          <button type="button" class="btn outline-dark" id="modalSelectBtn">Simular este</button>
-          <button type="button" class="btn green" id="modalWaBtn">Pedir no WhatsApp</button>
+          <button type="button" class="btn outline-dark" id="modalSelectBtn">Simular</button>
+          <button type="button" class="btn outline-dark" id="modalShareBtn">Enviar c/ foto ↗</button>
+          <button type="button" class="btn green" id="modalWaBtn">Pedir na loja</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal de Compartilhamento com Miniatura (Grupo ou WhatsApp Pessoal) -->
+  <div id="shareModal" class="image-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-backdrop" id="shareModalBackdrop"></div>
+    <div class="modal-box">
+      <button type="button" class="modal-close" id="shareModalClose" aria-label="Fechar compartilhamento">✕</button>
+      <div class="share-modal-body">
+        <div style="padding-right:42px;">
+          <strong id="shareModalHeading" style="font-size:17px;display:block;">Enviar com miniatura no WhatsApp</strong>
+          <span style="font-size:11.5px;color:#b8bcc7;">A miniatura vai junto da mensagem (via arquivo no celular ou preview/Ctrl+V no computador).</span>
+        </div>
+
+        <div class="share-preview-card">
+          <img id="sharePreviewImg" src="" alt="Miniatura do modelo">
+          <div>
+            <strong id="sharePreviewTitle">Modelo 004 · Ondas & Neon</strong>
+            <small id="sharePreviewMeta">Miniatura pronta para envio junto com a mensagem.</small>
+          </div>
+        </div>
+
+        <div id="personalPhoneWrap">
+          <label class="share-field-label" for="personalPhoneInput">WhatsApp pessoal de destino (opcional)</label>
+          <input type="tel" id="personalPhoneInput" class="share-dark-input" placeholder="DDD + Número (ex.: 84999998888) ou deixe vazio p/ escolher">
+        </div>
+
+        <div>
+          <label class="share-field-label" for="shareMsgBox">Mensagem que será enviada</label>
+          <textarea id="shareMsgBox" class="share-msg-preview"></textarea>
+        </div>
+
+        <p class="share-modal-hint" id="shareModalHint">💡 Ao clicar em enviar, copiamos a miniatura automaticamente para você poder colar (Ctrl+V) direto na conversa do WhatsApp Web, além do link de prévia na mensagem.</p>
+
+        <div class="share-modal-btns">
+          <button type="button" class="btn green" id="confirmShareWaBtn">Abrir WhatsApp e enviar agora →</button>
+        </div>
+        <div class="share-modal-btns two">
+          <button type="button" class="btn outline-dark" id="copyThumbImgBtn">📋 Copiar miniatura</button>
+          <button type="button" class="btn outline-dark" id="downloadThumbImgBtn">⬇ Baixar miniatura (.jpg)</button>
         </div>
       </div>
     </div>
@@ -2054,7 +2235,7 @@
   <script>
     // ===== Configuração Comercial Oficial Confirmada =====
     const WHATSAPP = "558421338804";
-    const CATALOG_PUBLIC_URL = "https://tillerconfeccoes.github.io/tillercatalogo2027/";
+    const CATALOG_PUBLIC_URL = "https://tillerconfeccoes.github.io/Carnatillercatalogo/";
     const MIN_QTY = 10;
     const MAX_QTY = 1000;
 
@@ -2273,7 +2454,8 @@
       document.getElementById("selectedModelLabel").textContent = label;
       document.getElementById("quoteModelName").textContent = label;
 
-      [document.getElementById("selectedThumbImg"), document.getElementById("quoteThumbImg")].forEach(img => {
+      [document.getElementById("selectedThumbImg"), document.getElementById("quoteThumbImg"), document.getElementById("thumbTogglePreview")].forEach(img => {
+        if (!img) return;
         img.dataset.fb = "";
         img.onerror = () => { if (!img.dataset.fb) { img.dataset.fb = "1"; img.src = fb; } };
         img.src = src;
@@ -2309,15 +2491,16 @@
         selectModel(n, false);
         const cat = categoryOf(n);
         trackEvent("escolher_modelo_whatsapp", { modelo: modelName(n), colecao: cat.name, origem: "site_novo" });
-        openWhatsApp([
+        openWhatsAppWithThumbOption([
           `Olá, Tiller Confecções! Gostei muito deste abadá CarnaTiller 2027 e quero orçamento com Arte Grátis:`,
           ``,
-          `• Modelo escolhido: ${modelName(n)} (${publicModelLink(n)})`,
+          `• Modelo escolhido: ${modelName(n)} — ${cat.name}`,
           `• Coleção: ${cat.name}`,
           `• Sublimação: ${selectedSublimation}`,
+          includeThumb() ? `\nVeja a miniatura do modelo:\n${publicModelLink(n)}` : null,
           ``,
           `Pode me passar os próximos passos para personalizar com o nome e cores do meu bloco?`
-        ].join("\n"));
+        ].filter(v => v !== null).join("\n"), n);
       }
     });
 
@@ -2400,7 +2583,17 @@
       const cat = categoryOf(n);
       closeModal();
       trackEvent("escolher_modelo_whatsapp", { modelo: modelName(n), colecao: cat.name, origem: "modal" });
-      openWhatsApp(`Olá, Tiller Confecções! Vi o ${modelName(n)} (${cat.name}) no catálogo CarnaTiller 2027 (${publicModelLink(n)}) e quero um orçamento com Arte Grátis!`);
+      const msg = [
+        `Olá, Tiller Confecções! Vi o ${modelName(n)} (${cat.name}) no catálogo CarnaTiller 2027 e quero um orçamento com Arte Grátis!`,
+        includeThumb() ? `\n${publicModelLink(n)}` : ""
+      ].join("");
+      openWhatsAppWithThumbOption(msg, n);
+    };
+
+    document.getElementById("modalShareBtn").onclick = () => {
+      const n = modalModelNum || selectedModel;
+      closeModal();
+      triggerShareFlow("grupo", buildModelShareMessage(n), n);
     };
 
     // ===== Simulador de Alta Conversão =====
@@ -2569,7 +2762,7 @@
         "Olá, Tiller Confecções! Quero solicitar meu orçamento CarnaTiller 2027 com Arte Grátis:",
         "",
         nomeBloco ? `• Bloco / Evento: ${nomeBloco}` : null,
-        `• Modelo: ${modelName(selectedModel)} — ${cat.name} (${publicModelLink(selectedModel)})`,
+        `• Modelo: ${modelName(selectedModel)} — ${cat.name}`,
         `• Sublimação: ${selectedSublimation}`,
         `• Quantidade: ${q.qty} peças`,
         `• Malha: Helanquinha 100% poliéster (Regata Tradicional)`,
@@ -2579,8 +2772,10 @@
         `• Recebimento: ${ship.label}`,
         `• Estimativa no simulador: ${money(q.total)} (${money(q.unit)}/un · Sinal 50%: ${money(q.total / 2)})`,
         "",
-        "Podemos confirmar valores, prazo e iniciar a Arte Grátis?"
-      ].filter(Boolean);
+        "Podemos confirmar valores, prazo e iniciar a Arte Grátis?",
+        includeThumb() ? "" : null,
+        includeThumb() ? publicModelLink(selectedModel) : null
+      ].filter(v => v !== null);
 
       trackEvent("solicitar_orcamento_whatsapp", {
         modelo: modelName(selectedModel),
@@ -2596,25 +2791,215 @@
       return lines.join("\n");
     }
 
-    document.getElementById("requestQuote").onclick = () => openWhatsApp(buildWhatsAppQuoteMessage());
-    document.getElementById("stickyWaBtn").onclick = () => openWhatsApp(buildWhatsAppQuoteMessage());
+    // ===== Motor de Envio com Miniatura da Imagem (Grupo + WhatsApp Pessoal + Loja) =====
+    const includeThumbCheck = document.getElementById("includeThumbCheck");
+    const includeThumb = () => !includeThumbCheck || includeThumbCheck.checked;
+
+    const shareModal = document.getElementById("shareModal");
+    const shareMsgBox = document.getElementById("shareMsgBox");
+    const personalPhoneWrap = document.getElementById("personalPhoneWrap");
+    const personalPhoneInput = document.getElementById("personalPhoneInput");
+    let currentShareState = { mode: "grupo", modelNum: 4 };
+
+    // Gera miniatura leve em JPG (para Web Share / Download) e PNG (para Clipboard Ctrl+V)
+    async function buildModelThumbBlobs(n) {
+      const cat = categoryOf(n);
+      const url = primaryImgPath(cat, n);
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+        img.onload = () => {
+          const maxW = 640;
+          const scale = Math.min(1, maxW / img.naturalWidth);
+          const cw = Math.round(img.naturalWidth * scale);
+          const ch = Math.round(img.naturalHeight * scale);
+          const canvas = document.createElement("canvas");
+          canvas.width = cw;
+          canvas.height = ch;
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0, cw, ch);
+          canvas.toBlob(jpgBlob => {
+            canvas.toBlob(pngBlob => {
+              resolve({ jpgBlob, pngBlob, filename: `CarnaTiller-2027-Modelo-${pad3(n)}.jpg` });
+            }, "image/png");
+          }, "image/jpeg", 0.88);
+        };
+        img.onerror = () => reject(new Error("Falha ao carregar imagem da miniatura"));
+        img.src = url;
+      });
+    }
+
+    async function copyThumbToClipboard(n) {
+      try {
+        if (!navigator.clipboard || typeof ClipboardItem === "undefined") return false;
+        const { pngBlob } = await buildModelThumbBlobs(n);
+        await navigator.clipboard.write([new ClipboardItem({ "image/png": pngBlob })]);
+        return true;
+      } catch (_) {
+        return false;
+      }
+    }
+
+    async function downloadThumbFile(n) {
+      try {
+        const { jpgBlob, filename } = await buildModelThumbBlobs(n);
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(jpgBlob);
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+        notify(`Miniatura ${filename} baixada!`);
+      } catch (_) {
+        notify("Não foi possível baixar a miniatura neste navegador.");
+      }
+    }
+
+    async function openWhatsAppWithThumbOption(message, n) {
+      if (includeThumb()) {
+        const copied = await copyThumbToClipboard(n);
+        if (copied) {
+          notify("Abrindo WhatsApp! Miniatura copiada (use Ctrl+V se quiser anexar a foto).");
+        }
+      }
+      openWhatsApp(message);
+    }
+
+    function buildModelShareMessage(n) {
+      const cat = categoryOf(n);
+      return [
+        `Olha esse modelo de abadá pro nosso Carnaval 2027! 🔥`,
+        `• ${modelName(n)} (${cat.name}) — CarnaTiller 2027`,
+        `• Arte Grátis + 1 ano de garantia na estampa`,
+        includeThumb() ? `\n${publicModelLink(n)}` : null
+      ].filter(Boolean).join("\n");
+    }
+
+    function buildQuoteShareMessage() {
+      const q = calculateQuote();
+      const cat = categoryOf(selectedModel);
+      const nomeBloco = (blockName.value || "").trim();
+      return [
+        nomeBloco
+          ? `Simulei o abadá do ${nomeBloco} no CarnaTiller 2027! 🔥`
+          : `Simulei o abadá do nosso bloco no CarnaTiller 2027! 🔥`,
+        `• ${modelName(selectedModel)} (${cat.name})`,
+        `• ${selectedSublimation}`,
+        `• ${q.qty} peças: ${money(q.unit)} por pessoa (Total ${money(q.total)})`,
+        `• Arte Grátis + 1 ano de garantia na estampa!`,
+        includeThumb() ? `\n${publicModelLink(selectedModel)}` : null
+      ].filter(Boolean).join("\n");
+    }
+
+    function openShareModal(mode, message, n) {
+      const cat = categoryOf(n);
+      currentShareState = { mode, modelNum: n };
+      document.getElementById("shareModalHeading").textContent =
+        mode === "pessoal"
+          ? "Enviar para WhatsApp pessoal (com miniatura)"
+          : "Enviar no grupo da turma (com miniatura)";
+      document.getElementById("sharePreviewImg").src = primaryImgPath(cat, n);
+      document.getElementById("sharePreviewTitle").textContent = `${modelName(n)} · ${cat.name}`;
+      document.getElementById("sharePreviewMeta").textContent = includeThumb()
+        ? "Miniatura ativada: link de prévia na mensagem + imagem pronta para copiar (Ctrl+V) ou baixar."
+        : "Opção de miniatura desmarcada: enviará apenas a mensagem de texto.";
+      personalPhoneWrap.style.display = mode === "pessoal" ? "block" : "none";
+      shareMsgBox.value = message;
+      shareModal.classList.add("open");
+      shareModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeShareModal() {
+      shareModal.classList.remove("open");
+      shareModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    document.getElementById("shareModalClose").onclick = closeShareModal;
+    document.getElementById("shareModalBackdrop").onclick = closeShareModal;
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeShareModal(); });
+
+    document.getElementById("copyThumbImgBtn").onclick = async () => {
+      const ok = await copyThumbToClipboard(currentShareState.modelNum);
+      notify(ok ? "Miniatura copiada! Cole (Ctrl+V) no WhatsApp." : "Use o botão 'Baixar miniatura' neste navegador.");
+    };
+    document.getElementById("downloadThumbImgBtn").onclick = () => downloadThumbFile(currentShareState.modelNum);
+
+    document.getElementById("confirmShareWaBtn").onclick = async () => {
+      const msg = shareMsgBox.value.trim();
+      const { mode, modelNum } = currentShareState;
+      if (includeThumb()) {
+        const copied = await copyThumbToClipboard(modelNum);
+        if (copied) notify("Miniatura copiada! Aperte Ctrl+V na conversa se quiser anexar a foto.");
+      }
+      closeShareModal();
+      if (mode === "pessoal") {
+        let digits = (personalPhoneInput.value || "").replace(/\D/g, "");
+        if (digits.length >= 10 && digits.length <= 11) digits = "55" + digits;
+        if (digits.length >= 12) {
+          const url = `https://wa.me/${digits}?text=${encodeURIComponent(msg)}`;
+          const w = window.open(url, "_blank");
+          if (w) { w.opener = null; } else { location.href = url; }
+          return;
+        }
+      }
+      shareToGroup(msg);
+    };
+
+    // Fluxo principal: tenta Web Share API COM ARQUIVO DE IMAGEM REAL (Android/iOS) primeiro!
+    async function triggerShareFlow(mode, message, n) {
+      const cat = categoryOf(n);
+      trackEvent("compartilhar_whatsapp", { modo: mode, modelo: modelName(n), com_miniatura: includeThumb() ? "sim" : "nao" });
+
+      if (!includeThumb()) {
+        if (mode === "pessoal") {
+          openShareModal("pessoal", message, n);
+        } else {
+          shareToGroup(message);
+        }
+        return;
+      }
+
+      // No celular (Android Chrome / iOS Safari), compartilha a FOTO REAL anexada + TEXTO da mensagem!
+      try {
+        if (navigator.share && typeof navigator.canShare === "function") {
+          const { jpgBlob, filename } = await buildModelThumbBlobs(n);
+          const file = new File([jpgBlob], filename, { type: "image/jpeg" });
+          if (navigator.canShare({ files: [file] })) {
+            await navigator.share({
+              files: [file],
+              title: `${modelName(n)} · ${cat.name} — CarnaTiller 2027`,
+              text: message
+            });
+            notify("Compartilhado com a miniatura da imagem!");
+            return;
+          }
+        }
+      } catch (err) {
+        // Usuário cancelou o menu nativo do celular -> não abre fallback duplicado
+        if (err && err.name === "AbortError") return;
+      }
+
+      // Desktop ou navegador sem Web Share de arquivos -> abre modal inteligente com miniatura + Ctrl+V + número pessoal!
+      openShareModal(mode, message, n);
+    }
+
+    document.getElementById("requestQuote").onclick = () => openWhatsAppWithThumbOption(buildWhatsAppQuoteMessage(), selectedModel);
+    document.getElementById("stickyWaBtn").onclick = () => openWhatsAppWithThumbOption(buildWhatsAppQuoteMessage(), selectedModel);
+    document.getElementById("finalWaBtn").onclick = () => openWhatsAppWithThumbOption(buildWhatsAppQuoteMessage(), selectedModel);
 
     document.getElementById("quickWaProof").onclick = () => {
       trackEvent("contato_whatsapp_direto", { modelo: "Arte Gratis Prova Social", origem: "site_github" });
       openWhatsApp("Olá, Tiller Confecções! Vi as produções reais do CarnaTiller 2027 no site e quero solicitar um orçamento com Arte Grátis para o meu bloco!");
     };
-    document.getElementById("finalWaBtn").onclick = () => openWhatsApp(buildWhatsAppQuoteMessage());
 
-    // Compartilhar no Grupo do WhatsApp da Turma (Motor Viral!)
-    document.getElementById("shareGroupBtn").onclick = () => {
-      const cat = categoryOf(selectedModel);
-      shareToGroup(`Gente, olha esse modelo de abadá pro nosso Carnaval 2027! 🔥\n${modelName(selectedModel)} (${cat.name}) — tem Arte Grátis e 1 ano de garantia na estampa:\n${publicModelLink(selectedModel)}`);
-    };
-    document.getElementById("shareQuoteGroup").onclick = () => {
-      const q = calculateQuote();
-      const cat = categoryOf(selectedModel);
-      shareToGroup(`Pessoal, simulei o abadá do nosso bloco no CarnaTiller 2027! 🔥\n• ${modelName(selectedModel)} (${cat.name})\n• ${q.qty} peças: ${money(q.unit)} por pessoa (Total ${money(q.total)})\n• Arte Grátis + 1 ano de garantia na estampa!\nVeja o modelo aqui: ${publicModelLink(selectedModel)}`);
-    };
+    // Compartilhamento para GRUPO e WHATSAPP PESSOAL (com miniatura da imagem!)
+    document.getElementById("shareGroupBtn").onclick = () => triggerShareFlow("grupo", buildModelShareMessage(selectedModel), selectedModel);
+    document.getElementById("sharePersonalModelBtn").onclick = () => triggerShareFlow("pessoal", buildModelShareMessage(selectedModel), selectedModel);
+    document.getElementById("shareQuoteGroup").onclick = () => triggerShareFlow("grupo", buildQuoteShareMessage(), selectedModel);
+    document.getElementById("shareQuotePersonal").onclick = () => triggerShareFlow("pessoal", buildQuoteShareMessage(), selectedModel);
 
     // ===== Inicialização =====
     renderTierTable();
